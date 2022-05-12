@@ -15,20 +15,24 @@ games2 = games[1000:]
 game_names1 = games_names[:1000]
 game_names2 = games_names[1000:]
 
+# print(games1)
+# print(games2)
+
+
 #Task 3
 unique1 = np.unique(game_names1).size
 unique2 = np.unique(game_names2).size
 
-# print(unique1)
-# print(unique2)
+# print("Кількість унікальних платформ у першій частині " + str(unique1))
+# print("Кількість унікальних платформ у другій частині " + str(unique2))
 
 #Task 4
 intersect = np.intersect1d(game_names1, game_names2)
-# print(intersect)
+# print("Спільні платформи " + str(intersect))
 
 #Task 5
 different = np.union1d((np.setdiff1d(game_names1, game_names2)), (np.setdiff1d(game_names2, game_names1)))
-# print(different)
+# print("Непересічні платформи " + str(different))
 
 #Task6, 7
 NA1 = 100.5
@@ -49,8 +53,10 @@ games1_cost = games1_cost[:1000]*g_price1
 games2_cost = genfromtxt(fname, delimiter=",", skip_header=True, usecols=(5, 6, 7))
 games2_cost = games2_cost[1000:]*g_price2
 
+# print("Вартість у першій частині")
 # print(games1_cost)
 # print()
+# print(print("Вартість у другій частині"))
 # print(games2_cost)
 
 #Task8
@@ -85,13 +91,5 @@ r2 = count(countries2, other2)
 
 compare(r1, r2)
 
-print(r1)
-print(r2)
-
-
-# print(game_names1)
-# print()
-# print(game_names2)
-# print(games1)
-# print()
-# print(games2)
+print("Кількість рядків першої частини, де частка з продажу у NA, EU та JP разом нижча, ніж в інших країнах " + str(r1))
+print("Кількість рядків другої частини, де частка з продажу у NA, EU та JP разом нижча, ніж в інших країнах " + str(r2))
